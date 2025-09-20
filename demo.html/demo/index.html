@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(0, 128, 0, 0.05) 0,
+        rgba(0, 128, 0, 0.05) 40px,
+        transparent 40px,
+        transparent 80px
+      );
+    }
+    .background-text {
+      margin-top: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      color: green;
+      text-shadow: 1px 1px 2px #00000033;
+    }
+    .form-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      margin: 40px 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: green;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .teammates input {
+      margin-bottom: 8px;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .share-btn {
+      margin-top: 10px;
+      background: #2196F3;
+    }
+    .share-btn:hover {
+      background: #0b7dda;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #333;
+      background: #eafbea;
+      width: 100%;
+      border-top: 2px solid #4CAF50;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer strong {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-text">PANTERS SURU</div>
+
+  <div class="form-container">
+    <h2>Group Registration</h2>
+    <!-- Replace the action URL with your own Formspree ID -->
+    <form action="https://formspree.io/f/movngpkz" method="POST">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="group">Group Name</label>
+      <input type="text" id="group" name="group">
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Enter 10-digit phone number">
+
+      <label for="village">Village Name *</label>
+      <input type="text" id="village" name="village" required>
+
+      <label>Teammate Names</label>
+      <div class="teammates">
+        <input type="text" name="teammate1" placeholder="Teammate 1">
+        <input type="text" name="teammate2" placeholder="Teammate 2">
+        <input type="text" name="teammate3" placeholder="Teammate 3">
+        <input type="text" name="teammate4" placeholder="Teammate 4">
+      </div>
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" name="feedback" rows="3"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Share button -->
+    <button class="share-btn" onclick="copyLink()">Share This Form</button>
+  </div>
+
+  <footer>
+    <p>You can contact: <strong>+91 9103030184</strong></p>
+    <p>✅ Thank you for your participation!</p>
+  </footer>
+
+  <script>
+    function copyLink() {
+      const formURL = window.location.href; // copies current page URL
+      navigator.clipboard.writeText(formURL).then(() => {
+        alert("Form link copied! You can now share it.");
+      });
+    }
+  <
